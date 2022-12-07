@@ -53,17 +53,17 @@ class file:
                 sum += child.getSize()
             return sum
 
-    def getChildrenFlat(self):
+    def getChildrenFlat(self) -> list:
         children = list()
         for child in self.children:
             children.append(child)
             if child.isdirectory: children.extend(child.getChildrenFlat())
         return children
 
-    def getDirsOver(self, min: int):
+    def getDirsOver(self, min: int) -> list:
         return sorted(list(filter(lambda x, min=min: x.isdirectory and x.getSize() >= min, self.getChildrenFlat())), key=lambda y: y.getSize())
 
-    def getSizeUnderTotal(self, max: int) -> tuple:
+    def getSizeUnderTotal(self, max: int) -> int:
         sum = 0
         for child in filter(lambda x: x.isdirectory, self.getChildrenFlat()):
             if child.getSize() <= max: sum += child.getSize()
