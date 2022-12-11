@@ -10,7 +10,6 @@ def main():
     pc = 0
     cycle = 0
     signal_strength = list()
-    crt = [[0 for x in range(40)] for y in range(6)]
     pos = (0, 0)
     print(f'Cycle {cycle+1}\t\t-> ', end='')
     while True:
