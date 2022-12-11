@@ -28,7 +28,6 @@ def main():
         print(len(tail2Visited))
 
 def move(diff: int) -> int:
-    move = 1
     if diff == 0: move = 0
     elif diff % 2 == 0: move = diff/2
     else: move = diff
